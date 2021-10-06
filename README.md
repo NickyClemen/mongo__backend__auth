@@ -12,6 +12,10 @@ __Password__: Ciren2020
 ~~~
 
 Retorna un JSON con el siguiente formato:
-```{
+~~~
+```
+{
   "access_token": "JWT"
-} ```
+}
+```
+~~~
