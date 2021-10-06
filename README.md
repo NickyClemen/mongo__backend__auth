@@ -7,15 +7,13 @@ El endpoint para probar el retorno de JWT es [http://localhost:3001/api/auth/sig
 
 Desde la pestaña de ***Authorization***, elegir en type ***Basic Auth*** e ingresar los siguientes datos de prueba:
 ~~~
-__Username__: clemenicky
-__Password__: Ciren2020
+Username: clemenicky
+Password: Ciren2020
 ~~~
 
 Retorna un JSON con el siguiente formato:
-~~~
 ```
 {
   "access_token": "JWT"
 }
 ```
-~~~
