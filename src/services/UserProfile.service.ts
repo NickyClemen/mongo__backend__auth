@@ -29,4 +29,9 @@ export default class UserProfile {
         return (await this.userProfile).findUserByUsername(username)
             .then((response:unknown) => response as IUserProfile);
     }
+
+    async findUserByEmail(email:string):Promise<IUserProfile|null> {
+        return (await this.userProfile).findUserByEmail(email)
+            .then((response:unknown) => response as IUserProfile);
+    }
 }
