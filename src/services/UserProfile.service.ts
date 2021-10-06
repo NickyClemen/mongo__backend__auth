@@ -1,18 +1,20 @@
-import db from '../../../alibrate-db';
+import database from '../../../mongo__backend__db';
+
+import UserProfileService from '../../../mongo__backend__db/dist/services/User.service';
 
 import IUserProfile from '../interfaces/IUserProfile.interface';
 
 export default class UserProfile {
     private static instance:UserProfile;
-    private userProfile:Promise<UserProfile>;
+    private userProfile:Promise<UserProfileService>;
 
     private constructor() {
         this.userProfile = UserProfile._init();
     }
 
     private static async _init() {
-        const { userProfile } = await db();
-        return userProfile;
+        const userProfileDatabase = await database();
+        return userProfileDatabase;
     }
 
     public static getInstance():UserProfile {
