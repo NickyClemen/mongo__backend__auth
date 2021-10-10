@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nicole Ordoqui Morales",
   "license": "ISC",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.30.0",
