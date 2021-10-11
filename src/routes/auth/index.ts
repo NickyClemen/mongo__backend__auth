@@ -30,9 +30,19 @@ export default async function authRouter(app:Application):Promise<void> {
                     res.status(403).json({ message: err.message });
                 }
 
-                const { name, lastname }:IUserProfile = userProfile;
+                const {
+                    username,
+                    email,
+                    name,
+                    lastname,
+                    age
+                }:IUserProfile = userProfile;
                 const payload:Payload = {
-                    name, lastname
+                    username,
+                    email,
+                    name,
+                    lastname,
+                    age,
                 };
 
                 const access_token:string = jwt.sign(payload, jwtSecret, { expiresIn: '15m', });
@@ -85,11 +95,14 @@ export default async function authRouter(app:Application):Promise<void> {
                 }
 
                 const userProfile:Payload = {
-                    name: decoded && decoded.name,
-                    lastname: decoded && decoded.lastname,
+                    username: decoded !== undefined && decoded.username,
+                    email: decoded !== undefined && decoded.email,
+                    name: decoded !== undefined && decoded.name,
+                    lastname: decoded !== undefined && decoded.lastname,
+                    age: decoded !== undefined && decoded.age,
                 }
 
-                res.status(200).json({ user_profile: userProfile });
+                res.status(200).json({ userProfile });
             });
         }
 

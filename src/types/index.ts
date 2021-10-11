@@ -5,6 +5,9 @@ export type VerifyToken = {
 }
 
 export type Payload = {
+    username:string,
+    email:string,
     name:string,
     lastname:string,
-};
+    age:number,
+}
