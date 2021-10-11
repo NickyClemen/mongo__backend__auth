@@ -13,8 +13,8 @@ export default class UserProfile {
     }
 
     private static async _init() {
-        const userProfileDatabase = await database();
-        return userProfileDatabase;
+        const { userProfile } = await database();
+        return userProfile;
     }
 
     public static getInstance():UserProfile {
