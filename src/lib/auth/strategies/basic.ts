@@ -13,7 +13,7 @@ passport.use(new BasicStrategy(async function(username:string, pass:string, cb:C
         const userProfile:IUserProfile|null = await userProfileService.findUserByUsername(username);
 
         if(!userProfile || userProfile === null) {
-            return cb(new Error('No existe el usuario en el sistema. Comuníquese con el administrador.'), false);
+            return cb(new Error('No existe el usuario en el sistema.'), false);
         }
 
         const { password }:IUserProfile = userProfile;
